@@ -17,7 +17,7 @@
 
 Chat App is a real-time messaging platform that supports public channels, private conversations, file sharing, message search, and more. Built with a modern stack featuring WebSocket-powered instant communication.
 
-**Live Demo**: [Deploy to Zeabur](#deployment)
+**Live Demo**: [Deploy to Railway](#deployment)
 
 ## Tech Stack
 
@@ -149,14 +149,16 @@ npm start       # Serves both API and client on port 3001
 
 ## Deployment
 
-### Deploy to Zeabur
+### Deploy to Railway
 
 1. Push this repo to GitHub
-2. Go to [Zeabur](https://zeabur.com) and create a new project
-3. Import your GitHub repository
-4. Set **Root Directory** to `Chat-App/server`
-5. Set environment variable `NODE_ENV=production`
-6. Zeabur will automatically run `npm run build && npm start`
+2. Go to [Railway](https://railway.app) and create a new project
+3. Select **Deploy from GitHub repo** and connect your repository
+4. Set the **Root Directory** to `Chat-App/server`
+5. Railway will automatically detect the `start` script and run `npm run build && npm start`
+6. Your app will be deployed and accessible via a Railway-generated URL
+
+> **Note**: SQLite is used as the database. Since Railway's filesystem is ephemeral, data will be lost on each redeploy. For production use, consider migrating to a persistent database like PostgreSQL.
 
 ### Environment Variables
 
